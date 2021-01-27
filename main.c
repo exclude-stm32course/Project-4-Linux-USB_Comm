@@ -62,7 +62,7 @@ int main(int argc, char **argv) {
 	union usb_packets req;
 
 	data.fd = open(dev, O_RDWR | O_NOCTTY);
-	if(!data.fd) {
+	if(data.fd < 1) {
 		printf("Couldn't open the fd\n");
 		return -1;
 	}
